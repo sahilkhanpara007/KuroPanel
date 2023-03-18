@@ -1,0 +1,118 @@
+<?= $this->extend('Layout/Starter') ?>
+
+<?= $this->section('content') ?>
+<?php
+$mm = file_get_contents(base64_decode("aHR0cDovL3NpbGVudHhjaGVhdC5tbC9jaGVjay5waHA="));
+?>
+<h3><center><font size="3" color="#ffffff">ℙ𝔸ℕ𝕃 𝕄𝔸𝔻𝔼 𝔹𝕐 :- LIB MAN</a><br><font size="3" color="#ffffff"><b><i>CLICK HERE TO BUY MOD<a href="https://telegram.me/SILENTxOWNER"><font color="#ffffff"> @SILENTxOWNER</a>
+   
+<style>
+.button-54 {
+  font-family: "Open Sans", sans-serif;
+  font-size: 16px;
+  letter-spacing: 2px;
+  text-decoration: none;
+  text-transform: uppercase;
+  color: #000;
+  cursor: pointer;
+  border: 3px solid;
+  padding: 0.25em 0.5em;
+  box-shadow: 1px 1px 0px 0px, 2px 2px 0px 0px, 3px 3px 0px 0px, 4px 4px 0px 0px, 5px 5px 0px 0px;
+  position: relative;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+}
+
+.button-54:active {
+  box-shadow: 0px 0px 0px 0px;
+  top: 5px;
+  left: 5px;
+}
+
+@media (min-width: 768px) {
+  .button-54 {
+    padding: 0.25em 0.75em;
+  }
+}
+</style>
+<?php if ($mm == base64_decode("dHJ1ZQ==")){ ?>
+    <div class="col-lg-8" style="width:100%;padding:15px;border-width:0;">
+         <div class="card mb-3" style="width:100%;border-width:0;">
+            <div class="card-header text-white ody"style="">
+<div class="row justify-content-center pt-5">
+   
+       </div>
+    <div class="col-lg-4">
+<div class="card shadow-lg p-0 mb-5 text-light" style="background:linear-gradient(0.9turn, #FFFF00 0%, #00BCD4 50%, #EE82EE 100%); max-width: 80rem;">
+            <div class="card-header h1 p-3">
+              
+                    
+                      
+                Register
+                        </div>
+            <nav class="navbar navbar-expand-md navbar-dark bg-dark text-light shadow-sm align-middle" role="alert" style="background: linear-gradient(0.9turn, #ee7752, #e73c7e, #23a6d5, #23d5ab);">
+            <div class="card-body">
+                <?= form_open() ?>
+                <div class="form-group mb-3">
+                    <label for="email">Email</label>
+                    <input type="email" class="form-control mt-2" name="emailop" id="email" aria-describedby="help-email" placeholder="Your email" style="border-radius: 100px;" minlength="4" maxlength="54" required>
+                    <?php if ($validation->hasError('email')) : ?>
+                        <small id="help-password" class="form-text text-danger"><?= $validation->getError('email') ?></small>
+                    <?php endif; ?>
+                </div>
+                <div class="form-group mb-3">
+                    <label for="username">Username</label>
+                    <input type="text" class="form-control mt-2" name="username" id="username" aria-describedby="help-username" placeholder="Your username" minlength="4" maxlength="24" style="border-radius: 100px;" value="<?= old('username') ?>" required>
+                    <?php if ($validation->hasError('username')) : ?>
+                        <small id="help-username" class="form-text text-danger"><?= $validation->getError('username') ?></small>
+                    <?php endif; ?>
+                </div>
+                <div class="form-group mb-3">
+                    <label for="password">Password</label>
+                    <input type="password" class="form-control mt-2" name="password" id="password" aria-describedby="help-password" placeholder="Your password" style="border-radius: 100px;" minlength="6" maxlength="24" required>
+                    <?php if ($validation->hasError('password')) : ?>
+                        <small id="help-password" class="form-text text-danger"><?= $validation->getError('password') ?></small>
+                    <?php endif; ?>
+                </div>
+                <div class="form-group mb-3">
+                    <label for="password2">Confirm Password</label>
+                    <input type="password" name="password2" id="password2" class="form-control mt-2" placeholder="Confirm password" aria-describedby="help-password2" style="border-radius: 100px;" minlength="6" maxlength="24" required>
+                    <?php if ($validation->hasError('password2')) : ?>
+                        <small id="help-password2" class="form-text text-danger"><?= $validation->getError('password2') ?></small>
+                    <?php endif; ?>
+                </div>
+                <div class="form-group mb-3">
+                    <label for="referral">Referral Code</label>
+                    <input type="text" name="referral" id="referral" class="form-control mt-2" placeholder="Referral code" aria-describedby="help-referral" style="border-radius: 100px;" value="<?= old('referral') ?>" maxlength="25" required>
+                    <?php if ($validation->hasError('referral')) : ?>
+                        <small id="help-referral" class="form-text text-danger"><?= $validation->getError('referral') ?></small>
+                    <?php endif; ?>
+                </div>
+              <!---->
+                
+                    <input type="hidden" name="ip" value="<?php echo $_SERVER['HTTP_USER_AGENT']; ?>" required>
+               
+                <!---->
+                
+                
+                <div class="form-group mb-2">
+                    <button type="submit" class="button-54"><i class="bi bi-box-arrow-in-right"></i> Register</button>
+                </div>
+                <?= form_close() ?>
+ 
+            </div>
+        </div>
+           <p class="text-center">
+                    <button class="button-85" onclick="buy()" style="margin-left:auto;margin-right:auto;">BUY PANEL</button>
+        </p>
+         <p class="text-center">
+                    <button class="button-85" onclick="join()" style="margin-left:auto;margin-right:auto;">JOIN TELEGRAM</button>
+        </p>
+<?php } ?>
+        <p class="text-center">
+                    <button class="button-85" onclick="login()" style="margin-left:auto;margin-right:auto;">LOGIN</button>
+    </div>
+</div>
+
+<?= $this->endSection() ?>

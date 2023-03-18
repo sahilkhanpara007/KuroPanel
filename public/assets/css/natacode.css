@@ -1,0 +1,26 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
+@import url('https://cdnjs.cloudflare.com/ajax/libs/limonte-sweetalert2/11.1.0/sweetalert2.min.css');
+@import url("https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css");
+
+body {
+    background-color: whitesmoke;
+    font-family: 'Poppins', sans-serif !important;
+}
+
+.container {
+    max-width: 1140px;
+}
+
+.btn-default {
+    background-color: #1b6ec2;
+    color: white;
+}
+
+.btn-default:hover {
+    background-color: dodgerblue;
+    color: whitesmoke;
+}
+
+.key-sensi {
+    filter: blur(3px);
+}

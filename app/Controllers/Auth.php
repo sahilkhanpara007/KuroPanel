@@ -1,0 +1,304 @@
+<?php
+
+namespace App\Controllers;
+
+use App\Models\CodeModel;
+use App\Models\UserModel;
+use CodeIgniter\Config\Services;
+
+class Auth extends BaseController
+{
+    protected $user;
+
+    public function __construct()
+    {
+        $this->userModel = new UserModel();
+    }
+
+    public function index()
+    {
+        /* ---------------------------- Debugmode --------------------------- */
+        $a = $this->userModel->getUser(session('userid'));
+        dd($a, session());
+    }
+
+    public function login()
+    {
+        if (session()->has('userid'))
+            return redirect()->to('dashboard');
+
+        if ($this->request->getPost())
+            return $this->login_action();
+
+        $data = [
+            'title' => 'Login',
+            'validation' => Services::validation(),
+        ];
+        return view('Auth/login', $data);
+    }
+
+    public function register()
+    {
+        if (session()->has('userid'))
+            return redirect()->to('dashboard');
+
+        if ($this->request->getPost())
+            return $this->register_action();
+        $data = [
+            'title' => 'Register',
+            'validation' => Services::validation(),
+        ];
+        return view('Auth/register', $data);
+    }
+
+    private function login_action()
+    {
+    $servername = "localhost";
+$username = "sile_a";
+$password = "13579012Giri";
+$dbname = "sile_a";
+
+$con = mysqli_connect($servername,$username,$password,$dbname);
+        $username = $this->request->getPost('username');
+        $password = $this->request->getPost('password');
+        $stay_log = $this->request->getPost('stay_log');
+
+        $form_rules = [
+            'username' => [
+                'label' => 'username',
+                'rules' => 'required|alpha_numeric|min_length[4]|max_length[25]|is_not_unique[users.username]',
+                'errors' => [
+                    'is_not_unique' => 'The {field} is not registered.'
+                ]
+            ],
+            'password' => [
+                'label' => 'password',
+                'rules' => 'required|min_length[6]|max_length[45]',
+            ],
+            'stay_log' => [
+                'rules' => 'permit_empty|max_length[3]'
+            ]
+        ];
+
+        if (!$this->validate($form_rules)) {
+            return redirect()->route('login')->withInput()->with('msgDanger', '<strong>Failed</strong> Please check the form.');
+        } else {
+            $validation = Services::validation();
+            $cekUser = $this->userModel->getUser($username, 'username');
+            if ($cekUser) {
+                $hashPassword = create_password($password, false);
+                if ($password ==  $cekUser->password) {
+                    $time = new \CodeIgniter\I18n\Time;
+                    $data = [
+                        'userid' => $cekUser->id_users,
+                        'unames' => $cekUser->username,
+                        'time_login' => $stay_log ? $time::now()->addHours(3000) : $time::now()->addMinutes(3000),
+                        'time_since' => $time::now(),
+                    ];
+                    	$tiime=time()+10;
+                    	//$res=mysqli_query($con,"update users set off=$tiime where username=".$username);
+                    session()->set($data);
+                    return redirect()->to('dashboard');
+                } else {
+                    $validation->setError('password', 'Wrong password, please try again.');
+                    return redirect()->route('login')->withInput()->with('msgDanger', '<strong>Failed</strong> Please check the form.');
+                }
+            }
+        }
+    }
+
+    public function register_action()
+    {
+        $username = $this->request->getPost('username');
+        $password = $this->request->getPost('password');
+        $referral = $this->request->getPost('referral');
+        $emaill = $this->request->getPost('emailop');
+        $emailop = $this->request->getPost('emailop');
+
+        $form_rules = [
+            'username' => [
+                'label' => 'username',
+                'rules' => 'required|alpha_numeric|min_length[4]|max_length[25]|is_unique[users.username]',
+                'errors' => [
+                    'is_unique' => 'The {field} has been taken.'
+                ]
+            ],
+            'password' => [
+                'label' => 'password',
+                'rules' => 'required|min_length[6]|max_length[45]',
+            ],
+            'password2' => [
+                'label' => 'password',
+                'rules' => 'required|min_length[6]|max_length[45]|matches[password]',
+                'errors' => [
+                    'matches' => '{field} not match, check the {field}.'
+                ]
+            ],
+            'referral' => [
+                'label' => 'referral',
+                'rules' => 'required|min_length[6]|alpha_numeric',
+            ]
+        ];
+if (!filter_var($emaill, FILTER_VALIDATE_EMAIL)) {
+                    $validation->setError('email', "email Malformed!!");
+    }
+        if (!$this->validate($form_rules)) {
+            // Form Invalid
+        } else {
+            $mCode = new CodeModel();
+            $rCheck = $mCode->checkCode($referral);
+            $validation = Services::validation();
+            if (!$rCheck) {
+                $validation->setError('referral', 'Wrong referral, please try again.');
+            } else {
+                if ($rCheck->used_by) {
+                    $validation->setError('referral', "Wrong referral, code has been used &middot; $rCheck->used_by.");
+                } else {
+                    $hashPassword = $password;
+                    $data_register = [
+                        'username' => $username,
+                        'password' => $hashPassword,
+                        'saldo' => $rCheck->set_saldo ?: 0,
+                        'uplink' => $rCheck->created_by,
+                        'email' => $emailop
+                    ];
+                    $ids = $this->userModel->insert($data_register, true);
+                    if ($ids) {
+                        $mCode->useReferral($referral);
+                        include('conn.php');
+       /* $result1 = mysqli_query($conn, $sql1);
+        $userDetails1 = mysqli_num_rows($result1);*/
+         $update = mysqli_query($conn,"UPDATE users SET email='$emailop' WHERE username='$username'");
+         if ($update) {
+                        $msg = "Register Successfuly!";
+                        return redirect()->to('login')->with('msgSuccess', $msg);
+                        }
+                    }
+                }
+            }
+        }
+        return redirect()->route('register')->withInput()->with('msgDanger', '<strong>Failed</strong> Please check the form.');
+    }
+
+    public function forgot()
+    {
+        if (session()->has('userid'))
+            return redirect()->to('dashboard');
+
+        if ($this->request->getPost())
+            return $this->Forgot_action();
+        $data = [
+            'title' => 'Forgot Password',
+            'validation' => Services::validation(),
+        ];
+        return view('Auth/forgot', $data);
+    }
+
+public function Forgot_action() {
+       include ('conn.php');
+        $username = $this->request->getPost('username');
+        $timezone_name = $this->request->getPost('timezone');
+        $sql1 ="select * from users where username='$username'";
+        $result1 = mysqli_query($conn, $sql1);
+        $userDetails1 = mysqli_num_rows($result1);
+        
+
+if ($userDetails1 > 0) {
+
+
+$arru = mysqli_fetch_assoc($result1);
+date_default_timezone_set("Asia/Kolkata");
+$t = time();
+$idop = $arru['id_users'];
+$expDate = $t+7200;
+    $token = md5($username).rand(10,9999);
+ $url = $_SERVER['HTTP_HOST'];
+ $update = mysqli_query($conn,"UPDATE users SET reset_link_token='$token' ,exp_date='$expDate' WHERE id_users='$idop'");
+ $tiime = date("Y/m/d h:ia");
+ $ip = $_SERVER['REMOTE_ADDR'];
+ $urll = $_SERVER['HTTP_HOST']."/changepassword.php?key=".$idop."&token=".$token;
+ if ($update) {
+
+    
+    
+    
+ }
+ $link = "<table width='100%' height='100%' cellpadding='0' cellspacing='0' bgcolor='#f5f6f7'>
+        <tr><td height='50'></td></tr>
+        <tr>
+            <td align='center' valign='top'>
+                <!-- table lvl 1 -->
+                <table width='600' cellpadding='0' cellspacing='0' bgcolor='#ffffff' style='border:1px solid #f1f2f5' class='main-content'>
+                    <tr>
+                        <td colspan='3' height='60' bgcolor='#ffffff' style='border-bottom:1px solid #eeeeee; padding-left:16px;' align='left'>
+                                <img src='https://www.dropbox.com/s/0251gackubbt1om/20230113_092930.jpg?dl=1' width='80' height='80' style='display:block;width:80px;height:80px;'/>
+                            
+                        </td>
+                    </tr>
+                    <tr><td colspan='3' height='20'></td></tr>
+                    <tr>
+                        <td width='20'></td>
+                        <td align='left'>
+                            <!-- table lvl 2 -->
+                            <table cellpadding='0' cellspacing='0' width='100%'>
+                                <tr><td colspan='3' height='20'></td></tr>
+                                <tr><td colspan='3'><h4> Reset Password</h4>
+A password reset event has been triggered. The password reset window is limited to two hours.<br /><br />
+If you do not reset your password within two hours, you will need to submit a new request.<br /><br />
+To complete the password reset process, visit the following link:<br /><br />
+<a style='background-color:#04AA6D;border-radius:5px;font-size: 17px;font-family: sans-serif;padding:7px 18px;color:white;font-weight:bold;' onclick='window.open('$urll')' href='$urll'>Reset Password »</a>
+<br>
+</br>
+<br></br>
+<a href='$urll'>$urll</a><br /><br />
+<table>
+    <tr><td>Username</td><td>$username</td></tr>
+    <tr><td>IP Address</td><td>$ip</td></tr>
+    <tr><td>Created</td><td>$tiime</td></tr>
+</table>
+</td></tr>
+                                <tr><td colspan='3' height='20'></td></tr>
+   </table>
+                        </td>
+                        <td width='20'></td>
+                    </tr>
+                    <tr><td colspan='3' height='20'></td></tr>
+                </table>
+            </td>
+        </tr>
+        <tr>
+            <td height='50'>
+            </td>
+        </tr>
+    </table>";
+    //$link = "<a href='".$_SERVER['HTTP_HOST']."/changepassword.php?key=".$idop."&token=".$token."'>Click To Reset password</a><br>".$urll."<br><b>This link will expire in 1 hour</b>';
+            $emailid = $arru['email'];
+  $daata = [
+      'email' => $emailid,
+      'from' => "ResetPassword",
+      'app_name' => $link,
+      'subject' => $username." ".rand(1,99),
+  ];
+            
+
+
+  
+    file_get_contents("https://sxcop.000webhostapp.com?".http_build_query($daata));
+                return redirect()->to('forgot')->with('msgSuccess', 'Password Reset Email sent!');
+} else {
+$timezone_name = "Asia/Kolkata";
+            return redirect()->to('forgot')->with('msgDanger', 'Username Does not exist!');
+}
+        
+}
+
+    public function logout()
+    {
+        if (session()->has('userid')) {
+            $unset = ['userid', 'unames', 'time_login', 'time_since'];
+            session()->remove($unset);
+            session()->setFlashdata('msgSuccess', 'Logout successfuly.');
+        }
+        return redirect()->to('login');
+    }
+}

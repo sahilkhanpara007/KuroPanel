@@ -1,0 +1,16 @@
+<?php
+
+$servername = "localhost";
+$uparhebro = "silentxo_a";
+$password = "13579012Giri";
+$dbname = "silentxo_a";
+
+$conn = mysqli_connect($servername,$uparhebro,$password,$dbname);
+
+if(!$conn) {
+
+die(" PROBLEM WITH CONNECTION : " . mysqli_connect_error());
+
+}
+  
+?>

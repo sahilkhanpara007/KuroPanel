@@ -1,0 +1,90 @@
+[14-Jan-2023 15:34:53 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function json_decode() in /home/silentxo/public_html/vendor/kint-php/kint/src/Utils.php:85
+Stack trace:
+#0 /home/silentxo/public_html/vendor/kint-php/kint/src/Utils.php(117): Kint\Utils::composerGetExtras()
+#1 /home/silentxo/public_html/vendor/kint-php/kint/init.php(54): Kint\Utils::composerSkipFlags()
+#2 /home/silentxo/public_html/vendor/composer/autoload_real.php(69): require('/home/silentxo/...')
+#3 /home/silentxo/public_html/vendor/composer/autoload_real.php(59): composerRequire4aec83fbb7957d041cf262f28c660f81('3917c79c5052b27...', '/home/silentxo/...')
+#4 /home/silentxo/public_html/vendor/autoload.php(7): ComposerAutoloaderInit4aec83fbb7957d041cf262f28c660f81::getLoader()
+#5 /home/silentxo/public_html/vendor/codeigniter4/framework/system/Autoloader/Autoloader.php(307): include('/home/silentxo/...')
+#6 /home/silentxo/public_html/vendor/codeigniter4/framework/system/Autoloader/Autoloader.php(105): CodeIgniter\Autoloader\Autoloader->discoverComposerNamespaces()
+#7 /home/sil in /home/silentxo/public_html/vendor/kint-php/kint/src/Utils.php on line 85
+[14-Jan-2023 15:34:56 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function json_decode() in /home/silentxo/public_html/vendor/kint-php/kint/src/Utils.php:85
+Stack trace:
+#0 /home/silentxo/public_html/vendor/kint-php/kint/src/Utils.php(117): Kint\Utils::composerGetExtras()
+#1 /home/silentxo/public_html/vendor/kint-php/kint/init.php(54): Kint\Utils::composerSkipFlags()
+#2 /home/silentxo/public_html/vendor/composer/autoload_real.php(69): require('/home/silentxo/...')
+#3 /home/silentxo/public_html/vendor/composer/autoload_real.php(59): composerRequire4aec83fbb7957d041cf262f28c660f81('3917c79c5052b27...', '/home/silentxo/...')
+#4 /home/silentxo/public_html/vendor/autoload.php(7): ComposerAutoloaderInit4aec83fbb7957d041cf262f28c660f81::getLoader()
+#5 /home/silentxo/public_html/vendor/codeigniter4/framework/system/Autoloader/Autoloader.php(307): include('/home/silentxo/...')
+#6 /home/silentxo/public_html/vendor/codeigniter4/framework/system/Autoloader/Autoloader.php(105): CodeIgniter\Autoloader\Autoloader->discoverComposerNamespaces()
+#7 /home/sil in /home/silentxo/public_html/vendor/kint-php/kint/src/Utils.php on line 85
+[14-Jan-2023 15:35:30 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function json_decode() in /home/silentxo/public_html/vendor/kint-php/kint/src/Utils.php:85
+Stack trace:
+#0 /home/silentxo/public_html/vendor/kint-php/kint/src/Utils.php(117): Kint\Utils::composerGetExtras()
+#1 /home/silentxo/public_html/vendor/kint-php/kint/init.php(54): Kint\Utils::composerSkipFlags()
+#2 /home/silentxo/public_html/vendor/composer/autoload_real.php(69): require('/home/silentxo/...')
+#3 /home/silentxo/public_html/vendor/composer/autoload_real.php(59): composerRequire4aec83fbb7957d041cf262f28c660f81('3917c79c5052b27...', '/home/silentxo/...')
+#4 /home/silentxo/public_html/vendor/autoload.php(7): ComposerAutoloaderInit4aec83fbb7957d041cf262f28c660f81::getLoader()
+#5 /home/silentxo/public_html/vendor/codeigniter4/framework/system/Autoloader/Autoloader.php(307): include('/home/silentxo/...')
+#6 /home/silentxo/public_html/vendor/codeigniter4/framework/system/Autoloader/Autoloader.php(105): CodeIgniter\Autoloader\Autoloader->discoverComposerNamespaces()
+#7 /home/sil in /home/silentxo/public_html/vendor/kint-php/kint/src/Utils.php on line 85
+[14-Jan-2023 15:35:32 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function json_decode() in /home/silentxo/public_html/vendor/kint-php/kint/src/Utils.php:85
+Stack trace:
+#0 /home/silentxo/public_html/vendor/kint-php/kint/src/Utils.php(117): Kint\Utils::composerGetExtras()
+#1 /home/silentxo/public_html/vendor/kint-php/kint/init.php(54): Kint\Utils::composerSkipFlags()
+#2 /home/silentxo/public_html/vendor/composer/autoload_real.php(69): require('/home/silentxo/...')
+#3 /home/silentxo/public_html/vendor/composer/autoload_real.php(59): composerRequire4aec83fbb7957d041cf262f28c660f81('3917c79c5052b27...', '/home/silentxo/...')
+#4 /home/silentxo/public_html/vendor/autoload.php(7): ComposerAutoloaderInit4aec83fbb7957d041cf262f28c660f81::getLoader()
+#5 /home/silentxo/public_html/vendor/codeigniter4/framework/system/Autoloader/Autoloader.php(307): include('/home/silentxo/...')
+#6 /home/silentxo/public_html/vendor/codeigniter4/framework/system/Autoloader/Autoloader.php(105): CodeIgniter\Autoloader\Autoloader->discoverComposerNamespaces()
+#7 /home/sil in /home/silentxo/public_html/vendor/kint-php/kint/src/Utils.php on line 85
+[14-Jan-2023 15:48:54 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function json_decode() in /home/silentxo/public_html/vendor/kint-php/kint/src/Utils.php:85
+Stack trace:
+#0 /home/silentxo/public_html/vendor/kint-php/kint/src/Utils.php(117): Kint\Utils::composerGetExtras()
+#1 /home/silentxo/public_html/vendor/kint-php/kint/init.php(54): Kint\Utils::composerSkipFlags()
+#2 /home/silentxo/public_html/vendor/composer/autoload_real.php(69): require('/home/silentxo/...')
+#3 /home/silentxo/public_html/vendor/composer/autoload_real.php(59): composerRequire4aec83fbb7957d041cf262f28c660f81('3917c79c5052b27...', '/home/silentxo/...')
+#4 /home/silentxo/public_html/vendor/autoload.php(7): ComposerAutoloaderInit4aec83fbb7957d041cf262f28c660f81::getLoader()
+#5 /home/silentxo/public_html/vendor/codeigniter4/framework/system/Autoloader/Autoloader.php(307): include('/home/silentxo/...')
+#6 /home/silentxo/public_html/vendor/codeigniter4/framework/system/Autoloader/Autoloader.php(105): CodeIgniter\Autoloader\Autoloader->discoverComposerNamespaces()
+#7 /home/sil in /home/silentxo/public_html/vendor/kint-php/kint/src/Utils.php on line 85
+[14-Jan-2023 15:58:57 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function json_decode() in /home/silentxo/public_html/vendor/kint-php/kint/src/Utils.php:85
+Stack trace:
+#0 /home/silentxo/public_html/vendor/kint-php/kint/src/Utils.php(117): Kint\Utils::composerGetExtras()
+#1 /home/silentxo/public_html/vendor/kint-php/kint/init.php(54): Kint\Utils::composerSkipFlags()
+#2 /home/silentxo/public_html/vendor/composer/autoload_real.php(69): require('/home/silentxo/...')
+#3 /home/silentxo/public_html/vendor/composer/autoload_real.php(59): composerRequire4aec83fbb7957d041cf262f28c660f81('3917c79c5052b27...', '/home/silentxo/...')
+#4 /home/silentxo/public_html/vendor/autoload.php(7): ComposerAutoloaderInit4aec83fbb7957d041cf262f28c660f81::getLoader()
+#5 /home/silentxo/public_html/vendor/codeigniter4/framework/system/Autoloader/Autoloader.php(307): include('/home/silentxo/...')
+#6 /home/silentxo/public_html/vendor/codeigniter4/framework/system/Autoloader/Autoloader.php(105): CodeIgniter\Autoloader\Autoloader->discoverComposerNamespaces()
+#7 /home/sil in /home/silentxo/public_html/vendor/kint-php/kint/src/Utils.php on line 85
+[14-Jan-2023 15:59:00 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function json_decode() in /home/silentxo/public_html/vendor/kint-php/kint/src/Utils.php:85
+Stack trace:
+#0 /home/silentxo/public_html/vendor/kint-php/kint/src/Utils.php(117): Kint\Utils::composerGetExtras()
+#1 /home/silentxo/public_html/vendor/kint-php/kint/init.php(54): Kint\Utils::composerSkipFlags()
+#2 /home/silentxo/public_html/vendor/composer/autoload_real.php(69): require('/home/silentxo/...')
+#3 /home/silentxo/public_html/vendor/composer/autoload_real.php(59): composerRequire4aec83fbb7957d041cf262f28c660f81('3917c79c5052b27...', '/home/silentxo/...')
+#4 /home/silentxo/public_html/vendor/autoload.php(7): ComposerAutoloaderInit4aec83fbb7957d041cf262f28c660f81::getLoader()
+#5 /home/silentxo/public_html/vendor/codeigniter4/framework/system/Autoloader/Autoloader.php(307): include('/home/silentxo/...')
+#6 /home/silentxo/public_html/vendor/codeigniter4/framework/system/Autoloader/Autoloader.php(105): CodeIgniter\Autoloader\Autoloader->discoverComposerNamespaces()
+#7 /home/sil in /home/silentxo/public_html/vendor/kint-php/kint/src/Utils.php on line 85
+[14-Jan-2023 16:15:33 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function json_decode() in /home/silentxo/public_html/vendor/kint-php/kint/src/Utils.php:85
+Stack trace:
+#0 /home/silentxo/public_html/vendor/kint-php/kint/src/Utils.php(117): Kint\Utils::composerGetExtras()
+#1 /home/silentxo/public_html/vendor/kint-php/kint/init.php(54): Kint\Utils::composerSkipFlags()
+#2 /home/silentxo/public_html/vendor/composer/autoload_real.php(69): require('/home/silentxo/...')
+#3 /home/silentxo/public_html/vendor/composer/autoload_real.php(59): composerRequire4aec83fbb7957d041cf262f28c660f81('3917c79c5052b27...', '/home/silentxo/...')
+#4 /home/silentxo/public_html/vendor/autoload.php(7): ComposerAutoloaderInit4aec83fbb7957d041cf262f28c660f81::getLoader()
+#5 /home/silentxo/public_html/vendor/codeigniter4/framework/system/Autoloader/Autoloader.php(307): include('/home/silentxo/...')
+#6 /home/silentxo/public_html/vendor/codeigniter4/framework/system/Autoloader/Autoloader.php(105): CodeIgniter\Autoloader\Autoloader->discoverComposerNamespaces()
+#7 /home/sil in /home/silentxo/public_html/vendor/kint-php/kint/src/Utils.php on line 85
+[14-Jan-2023 16:16:44 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function json_decode() in /home/silentxo/public_html/vendor/kint-php/kint/src/Utils.php:85
+Stack trace:
+#0 /home/silentxo/public_html/vendor/kint-php/kint/src/Utils.php(117): Kint\Utils::composerGetExtras()
+#1 /home/silentxo/public_html/vendor/kint-php/kint/init.php(54): Kint\Utils::composerSkipFlags()
+#2 /home/silentxo/public_html/vendor/composer/autoload_real.php(69): require('/home/silentxo/...')
+#3 /home/silentxo/public_html/vendor/composer/autoload_real.php(59): composerRequire4aec83fbb7957d041cf262f28c660f81('3917c79c5052b27...', '/home/silentxo/...')
+#4 /home/silentxo/public_html/vendor/autoload.php(7): ComposerAutoloaderInit4aec83fbb7957d041cf262f28c660f81::getLoader()
+#5 /home/silentxo/public_html/vendor/codeigniter4/framework/system/Autoloader/Autoloader.php(307): include('/home/silentxo/...')
+#6 /home/silentxo/public_html/vendor/codeigniter4/framework/system/Autoloader/Autoloader.php(105): CodeIgniter\Autoloader\Autoloader->discoverComposerNamespaces()
+#7 /home/sil in /home/silentxo/public_html/vendor/kint-php/kint/src/Utils.php on line 85

@@ -1,0 +1,42 @@
+[22-Jun-2022 16:22:22 UTC] PHP Warning:  require(/home/linuxedu/public_html/FallenXonline/public/../app/Config/Paths.php): failed to open stream: Permission denied in /home/linuxedu/public_html/FallenXonline/public/index.php on line 22
+[22-Jun-2022 16:22:22 UTC] PHP Warning:  require(/home/linuxedu/public_html/FallenXonline/public/../app/Config/Paths.php): failed to open stream: Permission denied in /home/linuxedu/public_html/FallenXonline/public/index.php on line 22
+[22-Jun-2022 16:22:22 UTC] PHP Fatal error:  require(): Failed opening required '/home/linuxedu/public_html/FallenXonline/public/../app/Config/Paths.php' (include_path='.:/opt/alt/php74/usr/share/pear') in /home/linuxedu/public_html/FallenXonline/public/index.php on line 22
+[22-Jun-2022 16:22:23 UTC] PHP Warning:  require(/home/linuxedu/public_html/FallenXonline/public/../app/Config/Paths.php): failed to open stream: Permission denied in /home/linuxedu/public_html/FallenXonline/public/index.php on line 22
+[22-Jun-2022 16:22:23 UTC] PHP Warning:  require(/home/linuxedu/public_html/FallenXonline/public/../app/Config/Paths.php): failed to open stream: Permission denied in /home/linuxedu/public_html/FallenXonline/public/index.php on line 22
+[22-Jun-2022 16:22:23 UTC] PHP Fatal error:  require(): Failed opening required '/home/linuxedu/public_html/FallenXonline/public/../app/Config/Paths.php' (include_path='.:/opt/alt/php74/usr/share/pear') in /home/linuxedu/public_html/FallenXonline/public/index.php on line 22
+[24-Jun-2022 17:33:39 Asia/Jakarta] PHP Fatal error:  Uncaught CodeIgniter\Format\Exceptions\FormatException: Failed to parse json string, error: "Type is not supported". in /home/linuxedu/public_html/FallenXonline/vendor/codeigniter4/framework/system/Format/JSONFormatter.php:41
+Stack trace:
+#0 /home/linuxedu/public_html/FallenXonline/vendor/codeigniter4/framework/system/Format/JSONFormatter.php(41): CodeIgniter\Format\Exceptions\FormatException::forInvalidJSON('Type is not sup...')
+#1 /home/linuxedu/public_html/FallenXonline/vendor/codeigniter4/framework/system/API/ResponseTrait.php(341): CodeIgniter\Format\JSONFormatter->format(Array)
+#2 /home/linuxedu/public_html/FallenXonline/vendor/codeigniter4/framework/system/API/ResponseTrait.php(99): CodeIgniter\Debug\Exceptions->format(Array)
+#3 /home/linuxedu/public_html/FallenXonline/vendor/codeigniter4/framework/system/Debug/Exceptions.php(110): CodeIgniter\Debug\Exceptions->respond(Array, 500)
+#4 [internal function]: CodeIgniter\Debug\Exceptions->exceptionHandler(Object(ErrorException))
+#5 {main}
+  thrown in /home/linuxedu/public_html/FallenXonline/vendor/codeigniter4/framework/system/Format/JSONFormatter.php on line 41
+[24-Jun-2022 17:33:51 Asia/Jakarta] PHP Fatal error:  Uncaught CodeIgniter\Format\Exceptions\FormatException: Failed to parse json string, error: "Type is not supported". in /home/linuxedu/public_html/FallenXonline/vendor/codeigniter4/framework/system/Format/JSONFormatter.php:41
+Stack trace:
+#0 /home/linuxedu/public_html/FallenXonline/vendor/codeigniter4/framework/system/Format/JSONFormatter.php(41): CodeIgniter\Format\Exceptions\FormatException::forInvalidJSON('Type is not sup...')
+#1 /home/linuxedu/public_html/FallenXonline/vendor/codeigniter4/framework/system/API/ResponseTrait.php(341): CodeIgniter\Format\JSONFormatter->format(Array)
+#2 /home/linuxedu/public_html/FallenXonline/vendor/codeigniter4/framework/system/API/ResponseTrait.php(99): CodeIgniter\Debug\Exceptions->format(Array)
+#3 /home/linuxedu/public_html/FallenXonline/vendor/codeigniter4/framework/system/Debug/Exceptions.php(110): CodeIgniter\Debug\Exceptions->respond(Array, 500)
+#4 [internal function]: CodeIgniter\Debug\Exceptions->exceptionHandler(Object(ErrorException))
+#5 {main}
+  thrown in /home/linuxedu/public_html/FallenXonline/vendor/codeigniter4/framework/system/Format/JSONFormatter.php on line 41
+[24-Jun-2022 17:36:55 Asia/Jakarta] PHP Fatal error:  Uncaught CodeIgniter\Format\Exceptions\FormatException: Failed to parse json string, error: "Type is not supported". in /home/linuxedu/public_html/FallenXonline/vendor/codeigniter4/framework/system/Format/JSONFormatter.php:41
+Stack trace:
+#0 /home/linuxedu/public_html/FallenXonline/vendor/codeigniter4/framework/system/Format/JSONFormatter.php(41): CodeIgniter\Format\Exceptions\FormatException::forInvalidJSON('Type is not sup...')
+#1 /home/linuxedu/public_html/FallenXonline/vendor/codeigniter4/framework/system/API/ResponseTrait.php(341): CodeIgniter\Format\JSONFormatter->format(Array)
+#2 /home/linuxedu/public_html/FallenXonline/vendor/codeigniter4/framework/system/API/ResponseTrait.php(99): CodeIgniter\Debug\Exceptions->format(Array)
+#3 /home/linuxedu/public_html/FallenXonline/vendor/codeigniter4/framework/system/Debug/Exceptions.php(110): CodeIgniter\Debug\Exceptions->respond(Array, 500)
+#4 [internal function]: CodeIgniter\Debug\Exceptions->exceptionHandler(Object(ErrorException))
+#5 {main}
+  thrown in /home/linuxedu/public_html/FallenXonline/vendor/codeigniter4/framework/system/Format/JSONFormatter.php on line 41
+[24-Jun-2022 17:37:37 Asia/Jakarta] PHP Fatal error:  Uncaught CodeIgniter\Format\Exceptions\FormatException: Failed to parse json string, error: "Type is not supported". in /home/linuxedu/public_html/FallenXonline/vendor/codeigniter4/framework/system/Format/JSONFormatter.php:41
+Stack trace:
+#0 /home/linuxedu/public_html/FallenXonline/vendor/codeigniter4/framework/system/Format/JSONFormatter.php(41): CodeIgniter\Format\Exceptions\FormatException::forInvalidJSON('Type is not sup...')
+#1 /home/linuxedu/public_html/FallenXonline/vendor/codeigniter4/framework/system/API/ResponseTrait.php(341): CodeIgniter\Format\JSONFormatter->format(Array)
+#2 /home/linuxedu/public_html/FallenXonline/vendor/codeigniter4/framework/system/API/ResponseTrait.php(99): CodeIgniter\Debug\Exceptions->format(Array)
+#3 /home/linuxedu/public_html/FallenXonline/vendor/codeigniter4/framework/system/Debug/Exceptions.php(110): CodeIgniter\Debug\Exceptions->respond(Array, 500)
+#4 [internal function]: CodeIgniter\Debug\Exceptions->exceptionHandler(Object(ErrorException))
+#5 {main}
+  thrown in /home/linuxedu/public_html/FallenXonline/vendor/codeigniter4/framework/system/Format/JSONFormatter.php on line 41
